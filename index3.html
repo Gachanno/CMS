@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="container header">
+        <h1 class="header__title">CMS</h1>
+        <div class="header__box">
+            <span class="header__text">Итоговая стоимость:&nbsp;</span>
+            <span class="header__total-price">$900.00</span>
+        </div>
+    </header>
+    <section class="main-section container">
+        <div class="main-section__nav-table">
+            <div class="main-section__filter-box">
+                <div class="filter">
+                    <img src="./icons/Filter.svg" alt="Поиск" class="filter__img">
+                    <span class="filter__text">Фильтр</span>
+                </div>
+                <form action="" class="main-section__search-box">
+                    <input type="submit" value="" class="main-section__img">
+                    <input type="search" placeholder="Поиск по наименованию и категории" name="search-table" class="main-section__search">
+                </form>
+            </div>
+            <a href="./index.html" class="main-section__add-item">Добавить товар</a>
+        </div>
+        <table class="table">
+            <thead class="table__head">
+                <tr>
+                    <th>ID</th>
+                    <th>Наименование</th>
+                    <th>Категория</th>
+                    <th>ед/изм</th>
+                    <th>количество</th>
+                    <th>цена</th>
+                    <th class="table__text--right">ИТОГ</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <div class="main-section__pages-box">
+            <div class="main-section__pages-showbox">
+                <span>Показывать на странице:&nbsp;</span>
+                <span class="main-section__count-pages">10</span>
+            </div>
+            <div class="main-section__number-box">
+                <span class="main-section__count-page">1-10</span>
+                <span>&nbsp;of&nbsp;</span>
+                <span class="main-section__max-pages">276</span>
+            </div>
+            <div class="main-section__arrow-box">
+                <div class="arrow arrow--left"></div>
+                <div class="arrow arrow--right"></div>
+            </div>
+        </div>
+    </section>
+    <script defer src="./js/main3.js" type="module"></script>
+    <script defer src="./node_modules/numeral/min/numeral.min.js"></script>
+</body>
+</html>

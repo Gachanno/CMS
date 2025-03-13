@@ -1,0 +1,12 @@
+.hidden-mobile {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+.visible-mobbile {
+    @include mobile-above {
+        display: none !important;
+    } 
+    
+}

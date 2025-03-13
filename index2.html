@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <dialog aria-label="Ошибка" class="dialog-error" style="display: none;" open="open">
+        <form method="dialog">
+            <button class="menu-burger dialog-error__burger"></button>
+        </form>
+        <div class="dialog-error__cross"></div>
+        <p class="dialog-error__title">Что-то пошло не так</p>
+    </dialog>
+    <header class="container header">
+        <h1 class="header__title">Изменить товар</h1>
+        <div class="header__box"> 
+            <a href="./index3.html" class="menu-burger header__burger--edit"></a>
+            <span class="header__id">id: 201910241</span>
+        </div>
+        
+    </header>
+    <section class="main-section">
+        <form action="get " id="add-item" class="main-section__form container">
+            <div class="main-section__form-flex">
+                <div class="main-section__form-box">
+                    <label for="Iname">Наименование</label>
+                    <input type="text" required name="name" id="Iname" class="main-section__form-input">
+                </div>
+                <div class="main-section__form-box">
+                    <label for="Icategory">Категория</label>
+                    <input type="text" required name="category" id="Icategory" class="main-section__form-input">
+                </div>
+                <div class="main-section__form-box">
+                    <label for="Iuof">Единицы измерения</label>
+                    <input type="text" required name="uof" id="Iuof" class="main-section__form-input">
+                </div>
+                <div class="main-section__form-box">
+                    <label for="discount">Дисконт</label>
+                    <div class="main-section__checkbox-box">
+                        <input type="checkbox" name="discount" class="main-section__form-checkbox" id="discount">
+                        <label for="discount" class="custom-checkbox"></label>
+                        <input type="number" min="1" max="100" name="discountNumb" disabled class="main-section__form-input input-checkbox">
+                    </div>
+                </div>
+                <div class="main-section__error-img">
+                    Изображение не должно <br>превышать размер 1 Мб
+                </div>
+            </div>
+            <div class="main-section__form-flex">
+                <div class="main-section__form-box">
+                    <label for="Idescription">Описание</label>
+                    <textarea name="description" required id="Idescription" class="main-section__form-textarea"></textarea>
+                </div>
+                <div class="main-section__form-box">
+                    <label for="Icount">Количество</label>
+                    <input type="number" required id="Icount" min="1" name="count" class="main-section__form-input">
+                </div>
+                <div class="main-section__form-box">
+                    <label for="Iprice">Цена</label>
+                    <input type="number" required min="1" id="Iprice" name="price" class="main-section__form-input">
+                </div>
+                <div class="main-section__form-box">
+                    <input type="file" name="img-input" accept="image/jpg, image/png" id="img-input" class="main-section__form-file">
+                    <label for="img-input" class="custom-file">Добавить изображение</label>
+                </div>
+            </div>
+            <div class="main-section__img-box">
+                <img alt="Выбранное изображение" class="main-section__img">
+                <img src="./icons/delete-img.svg" alt="Удалить изображение" class="main-section__img-delete">
+            </div>
+        </form>
+        <div class="main-section__box-submit">
+            <div class="main-section__text-price">
+                <span>Итоговая стоимость: </span>
+                <span data-js-price></span>
+            </div>
+            <input type="submit" form="add-item" value="Изменить товар" class="main-section__submit">
+        </div>
+    </section>
+    <script defer src="./node_modules/numeral/min/numeral.min.js"></script>
+    <script defer src="./js/main2.js" type="module"></script>
+</body>
+</html>

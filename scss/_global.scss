@@ -1,0 +1,26 @@
+body {
+    font-family: 'inter';
+    font-weight: 600;
+    font-size:  12px;
+    // line-height: 1.28;
+    color: #6e6893;
+    text-transform: uppercase;
+    background-color: #F2F0F9;
+    // @include mobile {
+    //     font-size: 0.86em;
+    // }
+}
+
+// a,
+// button,
+// input,
+// textarea,
+// svg * {
+    
+//     transition-duration: var(--transition-duraction);
+// }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
