@@ -1,14 +1,9 @@
 import { getStorage, setStorage } from "./modules/storage.js";
-
+import { priceСhange } from './modules/numbers.js'
 
 const checkbox = document.querySelector('.main-section__form-checkbox');
 const checkinut = document.querySelector('.input-checkbox');
-const priceElement = document.querySelector('[data-js-price]')
-const form = document.querySelector('.main-section__form')
-
-const priceСhange = () =>{
-    priceElement.textContent = `$ ${numeral((form.price.value - (form.price.value * (form.discountNumb.value / 100))) * form.count.value).format('0.00')}`
-}
+const form = document.querySelector('.main-section__form');
 
 const enforceMinMax = (el) => {
     if (el.target.value != "") {
