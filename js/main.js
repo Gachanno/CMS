@@ -2,7 +2,7 @@ import { getStorage, setStorage } from "./modules/storage.js";
 import { priceСhange } from './modules/numbers.js'
 
 const checkbox = document.querySelector('.main-section__form-checkbox');
-const checkinut = document.querySelector('.input-checkbox');
+const checkInput = document.querySelector('.input-checkbox');
 const form = document.querySelector('.main-section__form');
 
 const enforceMinMax = (el) => {
@@ -26,8 +26,8 @@ const enforceMinMax = (el) => {
 })
 
 checkbox.addEventListener('change', (event) => {
-    checkinut.disabled ^= true;
-    checkinut.required ^= true;
+    checkInput.disabled ^= true;
+    checkInput.required ^= true;
     form.discountNumb.value = '';
     priceСhange()
 }, false);

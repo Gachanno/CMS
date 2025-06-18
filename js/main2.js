@@ -4,13 +4,68 @@ import { priceСhange } from './modules/numbers.js'
 
 const form = document.querySelector('.main-section__form');
 const headerIdElement = document.querySelector('.header__id');
-const url = 'https://courageous-elfin-vulcanodon.glitch.me/api/goods';
+const url = 'https://dandy-chrome-house.glitch.me/api/goods';
 let params = new URLSearchParams(document.location.search);
 
 
+const checkbox = document.querySelector('.main-section__form-checkbox');
+const checkInput = document.querySelector('.input-checkbox');
+
+const enforceMinMax = (el) => {
+    if (el.target.value != "") {
+        if (parseInt(el.target.value) < parseInt(el.target.min)) {
+            el.target.value = el.target.min;
+        }
+        if (parseInt(el.target.value) > parseInt(el.target.max)) {
+            el.target.value = el.target.max;
+        }
+    }
+}
+
+[
+    form.discountNumb,
+    form.price,
+    form.count
+].forEach((element) =>{
+    element.addEventListener('change', enforceMinMax, {element})
+    element.addEventListener('change', priceСhange)
+})
+
+checkbox.addEventListener('change', (event) => {
+    checkInput.disabled ^= true;
+    checkInput.required ^= true;
+    form.discountNumb.value = '';
+    priceСhange()
+}, false);
+
+form['img-input'].addEventListener('change', (input) => {
+    const errorText = document.querySelector('.main-section__error-img');
+    if(input.target.files[0].size > 1024 * 1024) {
+        errorText.style.display = 'block';
+        input.target.value = '';
+    }
+    else errorText.removeAttribute("style");
+})
+
+document.querySelector('input[type="file"]').onchange = event => {
+    if(!event.target.value){
+        return
+    }
+    let reader = new FileReader();
+    const imgBlock = document.querySelector('img');
+    reader.onload = e => imgBlock.src = e.target.result;
+    reader.readAsDataURL(event.target.files[0]);
+    imgBlock.style.display = "block";
+};
+
+const img = document.querySelector('.main-section__img');
+img.addEventListener('click', (event) => {
+    img.removeAttribute("src");
+    img.removeAttribute("style");
+})
+
 const loadProductData = async () => {
     const itemId = params.get('id');
-    console.log(itemId);
     if (!itemId) {
         window.location.href = './index.html';
         return;
